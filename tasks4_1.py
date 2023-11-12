@@ -1,4 +1,6 @@
 # Задача 1
+from typing import List
+
 list_1 = [1, 2, 3, 4, 5]
 print("Первый и третий элементы списка:", list_1[0], list_1[2])
 print("Срез из первых трех элементов:", list_1[:3])
@@ -22,12 +24,12 @@ for elements in list_2:
 
 list_3 = ["a", "s", "1", "a", "32", "23"]
 letters = [char for char in list_3 if char.isalpha()]
-numbers = [char for char in list_3 if char.isdigit()]
+numbers = [numm for numm in list_3 if numm.isdigit()]
 print("Список с буквами:", letters)
 print("Список с числами:", numbers)
 
 # Задача 4
-letters.pop()
+print("Удаляем последний элемент из предыдущего списка:", letters.pop())
 letters.reverse()
 print("Измененный список с буквами:", letters)
 
