@@ -1,5 +1,4 @@
 # Задача 1
-from typing import List
 
 list_1 = [1, 2, 3, 4, 5]
 print("Первый и третий элементы списка:", list_1[0], list_1[2])
@@ -12,7 +11,7 @@ print("Срез из первых трех элементов:", list_1[:3])
 
 list_2 = ["Ростов", "+", "на", "-", "Дону"]
 list_2[list_2.index("+")] = "-"
-print("Название города:", ''.join(list_2))
+print("Название города:", '-'.join(list_2))
 print(type(list_2))
 for elements in list_2:
     print(list[elements])
