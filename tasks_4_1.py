@@ -160,21 +160,28 @@ a = float(input("Enter the first number: "))
 b = float(input("Enter the second number: "))
 operation = input("Enter the operation (+, -, *, /): ")
 
-a = float(input("Enter the first number: "))
-b = float(input("Enter the second number: "))
-operation = input("Enter the operation (+, -, *, /): ")
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+operation = input("Введите операцию (+, -, *, /): ")
 
-match operation:
-    case '+':
-        result = a + b
-    case '-':
-        result = a - b
-    case '*':
-        result = a * b
-    case '/':
-        "Error: Division by zero" if b == 0 else a / b
-        result = a / b
-    case _:
-        "Invalid operation"
+try:
+    match operation:
+        case '+':
+            result = a + b
+        case '-':
+            result = a - b
+        case '*':
+            result = a * b
+        case '/' if b != 0:
+            result = a / b
+        case _:
+            raise ValueError("Неверная операция")
 
-print(f"Result: {result}")
+    print(f"Результат: {result}")
+
+except ZeroDivisionError:
+    print("Ошибка: Деление на ноль")
+except ValueError as e:
+    print(f"Ошибка: {e}")
+except Exception as e:
+    print(f"Неожиданная ошибка: {e}")
